@@ -264,8 +264,7 @@
         "openmrsTableName": "encounter"
       },
       "ignoreAllFreeTextConcepts": true,
-      "includeFreeTextConceptNames": [],
-      "columnsToIgnore": []
+      "includeFreeTextConceptNames": []
     },
     {
       "name": "Disposition Data",
