@@ -204,7 +204,7 @@
       "type": "bacteriology",
       "ignoreAllFreeTextConcepts": true,
       "includeFreeTextConceptNames": [],
-	  "columnsToIgnore": []
+      "columnsToIgnore": []
     },
     {
       "name": "MetaData Dictionary",
@@ -265,7 +265,7 @@
       },
       "ignoreAllFreeTextConcepts": true,
       "includeFreeTextConceptNames": [],
-	  "columnsToIgnore": []
+      "columnsToIgnore": []
     },
     {
       "name": "Disposition Data",
