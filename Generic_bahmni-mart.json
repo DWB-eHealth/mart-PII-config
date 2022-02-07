@@ -203,7 +203,8 @@
       "conceptReferenceSource": "",
       "type": "bacteriology",
       "ignoreAllFreeTextConcepts": true,
-      "includeFreeTextConceptNames": []
+      "includeFreeTextConceptNames": [],
+	  "columnsToIgnore": []
     },
     {
       "name": "MetaData Dictionary",
@@ -263,7 +264,8 @@
         "openmrsTableName": "encounter"
       },
       "ignoreAllFreeTextConcepts": true,
-      "includeFreeTextConceptNames": []
+      "includeFreeTextConceptNames": [],
+	  "columnsToIgnore": []
     },
     {
       "name": "Disposition Data",
