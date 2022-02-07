@@ -147,11 +147,11 @@
 			"type": "provider",
 			"chunkSizeToRead": "500",
 			"groupedJobConfigs": [
-				{ 
+				{
 					"tableName": "provider_default",
 					"columnsToIgnore": [
 						"name"
-					] 
+					]
 				},
 				{
 					"tableName": "provider_attributes",
@@ -164,9 +164,9 @@
 			"type": "visitsAndEncounters",
 			"chunkSizeToRead": "500",
 			"groupedJobConfigs": [
-				{ 
+				{
 					"tableName": "patient_encounter_details_default",
-					"columnsToIgnore": [] 
+					"columnsToIgnore": []
 				}
 			]
 		},
