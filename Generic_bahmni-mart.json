@@ -1,0 +1,350 @@
+{
+	"jobs": [
+		{
+			"name": "Programs",
+			"type": "programs",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "programs_default",
+					"columnsToIgnore": [
+						"changed_by_name",
+						"creator_name"
+					]
+				},
+				{
+					"tableName": "program_workflow_states_default",
+					"columnsToIgnore": [
+						"changed_by_name",
+						"creator_name"
+					]
+				},
+				{
+					"tableName": "program_attributes",
+					"columnsToIgnore": []
+				},
+				{
+					"tableName": "patient_program_data_default",
+					"columnsToIgnore": []
+				}
+			]
+		},
+		{
+			"name": "Patients",
+			"type": "patients",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "patient_identifier",
+					"columnsToIgnore": []
+				},
+				{
+					"tableName": "patient_state_default",
+					"columnsToIgnore": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"type": "appointments",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "patient_appointment_default",
+					"columnsToIgnore": [
+						"comments"
+					]
+				}
+			]
+		},
+		{
+			"name": "Bed Management",
+			"type": "bedManagement",
+			"chunkSizeToRead": "500"
+		},
+		{
+			"name": "Location",
+			"type": "location",
+			"chunkSizeToRead": "500"
+		},
+		{
+			"name": "Operation Theater",
+			"type": "operationTheater",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "surgical_block_default",
+					"columnsToIgnore": []
+				},
+				{
+					"tableName": "surgical_appointment_default",
+					"columnsToIgnore": [
+						"notes"
+					]
+				},
+				{
+					"tableName": "surgical_appointment_attributes",
+					"columnsToIgnore": []
+				}
+			]
+		},
+		{
+			"name": "Person",
+			"type": "person",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "person_attributes",
+					"columnsToIgnore": [
+						"primaryContact",
+						"secondaryContact",
+						"primaryRelative",
+						"familyNameLocal",
+						"givenNameLocal",
+						"middleNameLocal"
+					]
+				},
+				{
+					"tableName": "person_details_default",
+					"columnsToIgnore": [
+						"prefix",
+						"given_name",
+						"middle_name",
+						"family_name_prefix",
+						"family_name",
+						"family_name2",
+						"family_name_suffix",
+						"birthdate"
+					]
+				},
+				{
+					"tableName": "person_address_default",
+					"columnsToIgnore": [
+						"latitude",
+						"longitude",
+						"postal_code",
+						"address1",
+						"address2",
+						"address3",
+						"address4",
+						"address5",
+						"address6",
+						"address7",
+						"address8",
+						"address9",
+						"address10",
+						"address11",
+						"address12",
+						"address13",
+						"address14",
+						"address15"
+					]
+				}
+			]
+		},
+		{
+			"name": "Provider",
+			"type": "provider",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{ 
+					"tableName": "provider_default",
+					"columnsToIgnore": [
+						"name"
+					] 
+				},
+				{
+					"tableName": "provider_attributes",
+					"columnsToIgnore": []
+				}
+			]
+		},
+		{
+			"name": "Visits And Encounters",
+			"type": "visitsAndEncounters",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{ 
+					"tableName": "patient_encounter_details_default",
+					"columnsToIgnore": [] 
+				}
+			]
+		},
+		{
+			"name": "Medication And Orders",
+			"type": "medicationAndOrders",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "medication_data_default",
+					"columnsToIgnore": [
+						"instructions",
+						"stop_notes",
+						"additional_instructions"
+					]
+				}
+			]
+		},
+		{
+			"name": "Diagnoses And Conditions",
+			"type": "diagnosesAndConditions",
+			"chunkSizeToRead": "500",
+			"groupedJobConfigs": [
+				{
+					"tableName": "conditions_default",
+					"columnsToIgnore": [
+						"additional_detail"
+					]
+				}
+			]
+		},
+		{
+			"name": "Bacteriology Data",
+			"conceptReferenceSource": "",
+			"type": "bacteriology",
+			"ignoreAllFreeTextConcepts": true,
+			"includeFreeTextConceptNames": []
+		},
+		{
+			"name": "MetaData Dictionary",
+			"type": "metadata",
+			"conceptReferenceSource": ""
+		},
+		{
+			"name": "Obs Data",
+			"type": "obs",
+			"incrementalUpdateConfig": {
+				"updateOn": "encounter_id",
+				"eventCategory": "Encounter",
+				"openmrsTableName": "encounter"
+			},
+			"separateTableConfig": {
+				"enableForAddMoreAndMultiSelect": true,
+				"separateTables": []
+			},
+			"conceptReferenceSource": "",
+			"ignoreAllFreeTextConcepts": true,
+			"includeFreeTextConceptNames": [],
+			"columnsToIgnore": [
+				"Image",
+				"Video"
+			]
+		},
+		{
+			"name": "Form2 Obs Data",
+			"type": "form2obs",
+			"incrementalUpdateConfig": {
+				"updateOn": "encounter_id",
+				"eventCategory": "Encounter",
+				"openmrsTableName": "encounter"
+			},
+			"separateTableConfig": {
+				"enableForAddMoreAndMultiSelect": true,
+				"separateTables": []
+			},
+			"conceptReferenceSource": "",
+			"ignoreAllFreeTextConcepts": true,
+			"includeFreeTextConceptNames": [],
+			"columnsToIgnore": [
+				"Image"
+			]
+		},
+		{
+			"name": "Registration Second Page",
+			"type": "reg",
+			"columnsToIgnore": [],
+			"separateTableConfig": {
+				"enableForAddMoreAndMultiSelect": true,
+				"separateTables": []
+			},
+			"incrementalUpdateConfig": {
+				"updateOn": "encounter_id",
+				"eventCategory": "Encounter",
+				"openmrsTableName": "encounter"
+			},
+			"ignoreAllFreeTextConcepts": true,
+			"includeFreeTextConceptNames": []
+		},
+		{
+			"name": "Disposition Data",
+			"type": "disposition",
+			"columnsToIgnore": [],
+			"incrementalUpdateConfig": {
+				"updateOn": "encounter_id",
+				"eventCategory": "Encounter",
+				"openmrsTableName": "encounter"
+			},
+			"columnsToIgnore": [
+				"disposition_note"
+			]
+		}
+	],
+	"procedures": [
+		{
+			"name": "Discharge Date Procedure",
+			"sourceFilePath": "classpath:procedureSql/dischargeDateProc.sql"
+		},
+		{
+			"name": "Age Group Procedure",
+			"sourceFilePath": "classpath:procedureSql/ageGroupProc.sql"
+		}
+	],
+	"views": [
+		{
+			"name": "patient_program_view",
+			"sourceFilePath": "classpath:viewSql/patientProgramView.sql"
+		},
+		{
+			"name": "patient_program_state_view",
+			"sourceFilePath": "classpath:viewSql/patientProgramStateView.sql"
+		},
+		{
+			"name": "patient_visits_encounters_view",
+			"sourceFilePath": "classpath:viewSql/patientVisitsEncountersView.sql"
+		},
+		{
+			"name": "appointment_admin_panel_view",
+			"sql": "SELECT * FROM appointment_service_default LEFT OUTER JOIN service_availability_default USING (appointment_service_id, service_name)"
+		},
+		{
+			"name": "patient_details_view",
+			"sourceFilePath": "classpath:viewSql/patientDetailsView.sql"
+		},
+		{
+			"name": "patient_information_view",
+			"sql": "SELECT pd.person_id AS patient_id, pd.gender, pd.birthyear, pd.birthtime, pd.birthdate_estimated, pd.death_date, pd.deathdate_estimated, pd.cause_of_death, pad.city_village, pad.state_province, pad.country, pad.county_district, pad.start_date, pad.end_date, pa.* FROM person_details_default pd LEFT JOIN person_attributes pa ON pa.person_id = pd.person_id LEFT JOIN person_address_default pad ON pad.person_id = pd.person_id and pad.preferred = 'true'"
+		},
+		{
+			"name": "bed_management_view",
+			"sourceFilePath": "classpath:viewSql/bedManagementView.sql"
+		},
+		{
+			"name": "bed_management_locations_view",
+			"sourceFilePath": "classpath:viewSql/locationWiseDischarge.sql"
+		},
+		{
+			"name": "patient_bed_view",
+			"sourceFilePath": "classpath:viewSql/patientBedView.sql"
+		},
+		{
+			"name": "patient_operation_theater_view",
+			"sql": "SELECT pd.person_id AS patient_id, pd.gender, pd.birthyear AS birth_year, EXTRACT(YEAR FROM (SELECT age( sb.block_starttime, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')))) AS age_at_surgery, age_group(sb.block_starttime, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')) AS age_group_at_surgery, pd.dead, pa.*, sa.surgical_block_id, sb.primary_provider_name, sb.location_name, sb.creator_name AS block_creator_name, sb.date_created AS block_date_created, sb.date_changed AS block_date_changed, sb.changed_by AS block_changed_by, sb.block_starttime AS block_start_time, sb.block_endtime AS block_end_time, saa.*, sa.sort_weight AS surgery_sort_weight, sa.status AS surgery_status, sa.actual_start_datetime AS surgery_actual_start_time, sa.actual_end_datetime AS surgery_actual_end_time, sa.date_created AS surgery_date_created, sa.date_changed AS surgery_date_changed, sa.creator_name AS surgery_creator_name, sa.changed_by AS surgery_date_changed_by FROM person_details_default pd LEFT JOIN person_attributes pa on pa.person_id = pd.person_id LEFT JOIN surgical_appointment_default sa on sa.patient_id = pd.person_id LEFT JOIN surgical_block_default sb on sb.surgical_block_id = sa.surgical_block_id LEFT JOIN surgical_appointment_attributes saa on saa.surgical_appointment_id = sa.surgical_appointment_id"
+		},
+		{
+			"name": "patient_appointment_view",
+			"sourceFilePath": "classpath:viewSql/patientAppointmentView.sql"
+		},
+		{
+			"name": "patient_program_medication_view",
+			"sql": "SELECT pd.person_id AS patient_id, ppd.program_id, md.patient_program_name AS program_name, ppd.date_enrolled, ppd.date_completed, ppd.program_outcome, pd.gender, pd.birthyear AS birth_year, EXTRACT(YEAR FROM (SELECT age( md.start_date, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')))) AS age_at_medication, age_group(md.start_date, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')) AS age_group_at_medication, pd.dead, pa.*, md.patient_program_id, md.encounter_id, md.encounter_type_name, md.order_id, md.orderer_name, md.coded_drug_name, md.non_coded_drug_name, md.dose, md.dose_units, md.frequency, md.route, md.start_date AS medication_start_date, md.calculated_end_date  AS medication_calculated_end_date, md.date_stopped AS medication_stopped_date, md.duration, md.duration_units, md.quantity, md.quantity_units, md.dispense AS is_dispensed, md.visit_id, md.visit_type FROM person_details_default pd LEFT JOIN person_attributes pa ON pa.person_id = pd.person_id LEFT JOIN medication_data_default md ON md.patient_id = pd.person_id LEFT OUTER JOIN patient_program_data_default ppd ON ppd.patient_id = md.patient_id and ppd.patient_program_id = md.patient_program_id"
+		},
+		{
+			"name": "patient_diagnosis_condition_view",
+			"sourceFilePath": "classpath:viewSql/patientDiagnosisConditionView.sql"
+		},
+		{
+			"name": "patient_bed_tags_history_view",
+			"sourceFilePath": "classpath:viewSql/patientBedTagView.sql"
+		}
+	]
+}
