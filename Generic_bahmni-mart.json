@@ -276,7 +276,7 @@
         "openmrsTableName": "encounter"
       },
       "columnsToIgnore": [
-        "disposition_note"
+        "Disposition Note"
       ]
     }
   ],
