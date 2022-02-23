@@ -251,22 +251,6 @@
       ]
     },
     {
-      "name": "Registration Second Page",
-      "type": "reg",
-      "columnsToIgnore": [],
-      "separateTableConfig": {
-        "enableForAddMoreAndMultiSelect": true,
-        "separateTables": []
-      },
-      "incrementalUpdateConfig": {
-        "updateOn": "encounter_id",
-        "eventCategory": "Encounter",
-        "openmrsTableName": "encounter"
-      },
-      "ignoreAllFreeTextConcepts": true,
-      "includeFreeTextConceptNames": []
-    },
-    {
       "name": "Disposition Data",
       "type": "disposition",
       "columnsToIgnore": [],
