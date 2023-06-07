@@ -1,0 +1,371 @@
+{
+  "jobs": [
+    {
+      "name": "Programs",
+      "type": "programs",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "programs_default",
+          "columnsToIgnore": []
+        },
+        {
+          "tableName": "program_workflow_states_default",
+          "columnsToIgnore": []
+        },
+        {
+          "tableName": "program_attributes",
+          "columnsToIgnore": []
+        },
+        {
+          "tableName": "patient_program_data_default",
+          "columnsToIgnore": []
+        }
+      ]
+    },
+    {
+      "name": "Patients",
+      "type": "patients",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "patient_identifier",
+          "columnsToIgnore": [
+            "National ID"
+          ]
+        },
+        {
+          "tableName": "patient_state_default",
+          "columnsToIgnore": []
+        }
+      ]
+    },
+    {
+      "name": "Appointments",
+      "type": "appointments",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "patient_appointment_default",
+          "columnsToIgnore": [
+            "comments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bed Management",
+      "type": "bedManagement",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "Location",
+      "type": "location",
+      "chunkSizeToRead": "500"
+    },
+    {
+      "name": "Operation Theater",
+      "type": "operationTheater",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "surgical_block_default",
+          "columnsToIgnore": []
+        },
+        {
+          "tableName": "surgical_appointment_default",
+          "columnsToIgnore": [
+            "notes"
+          ]
+        },
+        {
+          "tableName": "surgical_appointment_attributes",
+          "columnsToIgnore": []
+        }
+      ]
+    },
+    {
+      "name": "Person",
+      "type": "person",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "person_attributes",
+          "columnsToIgnore": [
+            "primaryContact",
+            "secondaryContact",
+            "primaryRelative",
+            "familyNameLocal",
+            "givenNameLocal",
+            "middleNameLocal",
+            "phoneNumber 1",
+            "phoneNumber 2",
+            "nameOfContactPerson",
+            "nameOfContactPersonInArabic",
+            "contactPhoneNumber"
+          ]
+        },
+        {
+          "tableName": "person_details_default",
+          "columnsToIgnore": [
+            "prefix",
+            "given_name",
+            "middle_name",
+            "family_name_prefix",
+            "family_name",
+            "family_name2",
+            "family_name_suffix",
+            "birthdate"
+          ]
+        },
+        {
+          "tableName": "person_address_default",
+          "columnsToIgnore": [
+            "latitude",
+            "longitude",
+            "postal_code",
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "address6",
+            "address7",
+            "address8",
+            "address9",
+            "address10",
+            "address11",
+            "address12",
+            "address13",
+            "address14",
+            "address15",
+            "country"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Provider",
+      "type": "provider",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "provider_default",
+          "columnsToIgnore": [
+            "name"
+          ]
+        },
+        {
+          "tableName": "provider_attributes",
+          "columnsToIgnore": []
+        }
+      ]
+    },
+    {
+      "name": "Visits And Encounters",
+      "type": "visitsAndEncounters",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "patient_encounter_details_default",
+          "columnsToIgnore": []
+        }
+      ]
+    },
+    {
+      "name": "Medication And Orders",
+      "type": "medicationAndOrders",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "medication_data_default",
+          "columnsToIgnore": [
+            "instructions",
+            "stop_notes",
+            "additional_instructions"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Diagnoses And Conditions",
+      "type": "diagnosesAndConditions",
+      "chunkSizeToRead": "500",
+      "groupedJobConfigs": [
+        {
+          "tableName": "conditions_default",
+          "columnsToIgnore": [
+            "additional_detail"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bacteriology Data",
+      "conceptReferenceSource": "",
+      "type": "bacteriology",
+      "ignoreAllFreeTextConcepts": true,
+      "includeFreeTextConceptNames": [],
+      "columnsToIgnore": []
+    },
+    {
+      "name": "MetaData Dictionary",
+      "type": "metadata",
+      "conceptReferenceSource": ""
+    },
+    {
+      "name": "Obs Data",
+      "type": "obs",
+      "incrementalUpdateConfig": {
+        "updateOn": "encounter_id",
+        "eventCategory": "Encounter",
+        "openmrsTableName": "encounter"
+      },
+      "separateTableConfig": {
+        "enableForAddMoreAndMultiSelect": true,
+        "separateTables": []
+      },
+      "conceptReferenceSource": "",
+      "ignoreAllFreeTextConcepts": true,
+      "includeFreeTextConceptNames": [],
+      "columnsToIgnore": [
+        "Image",
+        "Video"
+      ]
+    },
+    {
+      "name": "Form2 Obs Data",
+      "type": "form2obs",
+      "incrementalUpdateConfig": {
+        "updateOn": "encounter_id",
+        "eventCategory": "Encounter",
+        "openmrsTableName": "encounter"
+      },
+      "separateTableConfig": {
+        "enableForAddMoreAndMultiSelect": true,
+        "separateTables": []
+      },
+      "conceptReferenceSource": "",
+      "ignoreAllFreeTextConcepts": true,
+      "includeFreeTextConceptNames": [],
+      "columnsToIgnore": [
+        "Image"
+      ]
+    },
+    {
+      "name": "Disposition Data",
+      "type": "disposition",
+      "columnsToIgnore": [],
+      "incrementalUpdateConfig": {
+        "updateOn": "encounter_id",
+        "eventCategory": "Encounter",
+        "openmrsTableName": "encounter"
+      },
+      "columnsToIgnore": [
+        "Disposition Note"
+      ]
+    },
+	{
+		"name": "Drivers List",
+		"type": "customSQL",
+		"tableName": "drivers_list",
+		"readerSql": "SELECT DISTINCT patient_identifier.identifier as `Patient Identifier`, concat_ws(' ',pivoted_person_attributes.first_name, pivoted_person_attributes.middle_name, pivoted_person_attributes.last_name) as `Patient Name (Arabic)`, pivoted_person_attributes.patient_phone_number_1 as `Phone number 1`, pivoted_person_attributes.patient_phone_number_2 as `Phone number 2`, total_passengers.passengers as `Total passengers`, pa.start_time as `Start time`, date(pa.start_date_time) as `Start date`, date(pa.end_date_time) as `End date`, (CASE WHEN EXISTS (SELECT appointment_service_id FROM appointment_service as1 WHERE name = '3D' and as1.voided = 0 AND appointment_service_id IN (SELECT DISTINCT appointment_service_id FROM patient_appointment pa1 WHERE as1.appointment_service_id=pa1.appointment_service_id AND pa1.patient_id = pa.patient_id AND pa1.voided = 0 AND pa1.status NOT IN ('Cancelled') AND date(pa1.start_date_time)=date(pa.start_date_time))) THEN 'Yes' ELSE NULL END) as `3D`, (SELECT group_concat(name) FROM appointment_service_type ast WHERE ast.voided = 0 and appointment_service_id IN(SELECT DISTINCT appointment_service_id FROM appointment_service as1 WHERE as1.name = 'Session under sedation' AND as1.voided = 0) AND appointment_service_type_id IN (CASE WHEN EXISTS (SELECT appointment_service_type_id FROM patient_appointment pa1 WHERE ast.appointment_service_id=pa1.appointment_service_id AND ast.appointment_service_type_id=pa1.appointment_service_type_id AND pa1.patient_id = pa.patient_id AND pa1.voided = 0 AND pa1.status NOT IN ('Cancelled') AND date(pa1.start_date_time)=date(pa.start_date_time)) THEN appointment_service_type_id ELSE NULL END)) as `Sedation`, pa.service as `Service`, person_address.city_village as `Area`, person_address.address1 as `Address (text)`, pa.comments as `Notes`, l.name as `Location` FROM patient_identifier JOIN person p ON p.person_id = patient_identifier.patient_id AND p.voided IS FALSE JOIN(SELECT person_id, group_concat(first_name) as first_name, group_concat(middle_name) as middle_name, group_concat(last_name) as last_name, group_concat(patient_phone_number_1) as patient_phone_number_1, group_concat(patient_phone_number_2) as patient_phone_number_2 FROM ((SELECT person_attribute.person_id, person_attribute.value, CASE WHEN person_attribute_type.name = 'givenNameLocal' THEN value END as first_name, CASE WHEN person_attribute_type.name = 'middleNameLocal' THEN value END as middle_name, CASE WHEN person_attribute_type.name = 'familyNameLocal' THEN value END as last_name, CASE WHEN person_attribute_type.name = 'phoneNumber 1' THEN value END as patient_phone_number_1, CASE WHEN person_attribute_type.name = 'phoneNumber 2' THEN value END as patient_phone_number_2 FROM person_attribute JOIN person_attribute_type ON person_attribute.person_attribute_type_id = person_attribute_type.person_attribute_type_id WHERE voided=0) as person_attributes_with_name) GROUP BY person_id) as pivoted_person_attributes ON pivoted_person_attributes.person_id = patient_identifier.patient_id JOIN person_address ON person_address.person_id = patient_identifier.patient_id AND person_address.voided IS FALSE JOIN(select MIN(start_time), patientApp.appointment_service_id, patientApp.appointment_service_type_id, patientAppointment.comments, patientApp.start_time, patientApp.location_id, patientAppointment.patient_id, patientAppointment.voided, patientApp.service, patientAppointment.start_date_time, patientAppointment.end_date_time from patient_appointment as patientAppointment JOIN(select patient_appointment.patient_appointment_id, patient_appointment.appointment_service_id, patient_appointment.appointment_service_type_id, patient_appointment.comments, patient_appointment.location_id, MIN(CAST(patient_appointment.start_date_time AS TIME)) as start_time, appServiceName, appServiceTypeName, service FROM patient_appointment LEFT JOIN(SELECT appService.appointment_service_id, appServiceType.appointment_service_type_id, appService.name as appServiceName, appServiceType.name as appServiceTypeName, CASE WHEN appService.name !='3D' and appService.name !='Session under sedation' THEN appService.name ELSE NULL END as service from appointment_service as appService LEFT JOIN appointment_service_type as appServiceType on appService.appointment_service_id = appServiceType.appointment_service_id and appServiceType.voided IS FALSE WHERE appService.voided=0) as aps ON aps.appointment_service_id = patient_appointment.appointment_service_id where status NOT IN ('Cancelled') group by start_date_time, patient_id)as patientApp on patientApp.patient_appointment_id = patientAppointment.patient_appointment_id group by patient_id, CAST(start_date_time AS DATE)) as pa ON pa.patient_id = patient_identifier.patient_id and pa.voided IS FALSE JOIN location l ON pa.location_id = l.location_id AND l.retired IS FALSE AND pa.voided IS FALSE JOIN obs o ON o.person_id = patient_identifier.patient_id JOIN encounter e ON o.encounter_id = e.encounter_id AND o.voided IS FALSE AND e.voided IS FALSE JOIN concept c ON o.concept_id = c.concept_id AND c.retired IS FALSE JOIN(SELECT obs.person_id, obs.concept_id, obs.encounter_id FROM obs JOIN patient_program as pp ON obs.person_id = pp.patient_id and pp.voided IS FALSE JOIN encounter e ON obs.encounter_id = e.encounter_id AND obs.voided IS FALSE AND e.voided IS FALSE JOIN concept_name obs_question on obs_question.concept_id = obs.concept_id AND obs_question.concept_name_type='FULLY_SPECIFIED' AND obs_question.voided IS FALSE JOIN concept_name as coded_concept ON coded_concept.concept_id = obs.value_coded AND coded_concept.concept_name_type='FULLY_SPECIFIED' AND coded_concept.voided IS FALSE WHERE obs.encounter_id = (select max(encounter_id) from encounter where encounter.patient_id = obs.person_id) and (obs_question.name IN('IMA, Transportation need', 'PPN, Transportation need') AND (coded_concept.name = 'Ambulance' OR coded_concept.name = 'Car')) AND pp.outcome_concept_id IS NULL AND NOT EXISTS (select obs1.concept_id from obs obs1 where obs1.encounter_id=obs.encounter_id AND obs1.concept_id=(select cn1.concept_id from concept_name cn1 where cn1.name='PPN, Type of visit' and cn1.concept_name_type='FULLY_SPECIFIED' and cn1.voided IS FALSE) AND obs1.value_coded=(select cn1.concept_id from concept_name cn1 where cn1.name='Discharge' and cn1.concept_name_type='FULLY_SPECIFIED' and cn1.voided IS FALSE) and obs1.voided=0) OR ((obs_question.name = 'IMA, Transportation need' OR (obs_question.name = 'PPN, Transportation need' and obs_question.name = 'PPN, Type of visit')) and ((coded_concept.name = 'Ambulance' and (coded_concept.name = 'Follow-up' AND pp.outcome_concept_id IS NULL)) OR (coded_concept.name = 'Car' and (coded_concept.name = 'Follow-up' AND pp.outcome_concept_id IS NULL))))) as latest_encounter ON latest_encounter.person_id = e.patient_id LEFT OUTER JOIN(SELECT obs.encounter_id, obs.concept_id, obs.person_id, obs.value_numeric as passengers FROM obs JOIN encounter ON obs.encounter_id = encounter.encounter_id AND obs.voided IS FALSE AND encounter.voided IS FALSE JOIN concept_name numeric_concept ON numeric_concept.concept_id = obs.concept_id AND numeric_concept.concept_name_type ='FULLY_SPECIFIED' AND numeric_concept.voided IS FALSE WHERE obs.encounter_id = (select max(encounter_id) from encounter where encounter.patient_id = obs.person_id) AND numeric_concept.name IN('IMA, Number of passengers', 'PPN, Number of passengers')) as total_passengers ON total_passengers.encounter_id = latest_encounter.encounter_id WHERE patient_identifier.identifier_type = (SELECT patient_identifier_type_id FROM patient_identifier_type WHERE name = 'Patient Identifier') and patient_identifier.voided = 0 ORDER BY l.name, person_address.state_province, person_address.city_village"
+	}
+  ],
+  "procedures": [
+    {
+      "name": "Discharge Date Procedure",
+      "sourceFilePath": "classpath:procedureSql/dischargeDateProc.sql"
+    },
+    {
+      "name": "Age Group Procedure",
+      "sourceFilePath": "file:/var/www/bahmni_config/bahmni-mart/ageGroupProc.sql"
+    }
+  ],
+  "views": [
+    {
+      "name": "patient_program_view",
+      "sourceFilePath": "classpath:viewSql/patientProgramView.sql"
+    },
+    {
+      "name": "patient_program_state_view",
+      "sourceFilePath": "classpath:viewSql/patientProgramStateView.sql"
+    },
+    {
+      "name": "patient_visits_encounters_view",
+      "sourceFilePath": "classpath:viewSql/patientVisitsEncountersView.sql"
+    },
+    {
+      "name": "appointment_admin_panel_view",
+      "sql": "SELECT * FROM appointment_service_default LEFT OUTER JOIN service_availability_default USING (appointment_service_id, service_name)"
+    },
+    {
+      "name": "patient_details_view",
+      "sourceFilePath": "classpath:viewSql/patientDetailsView.sql"
+    },
+    {
+      "name": "patient_information_view",
+      "sql": "SELECT pd.person_id AS patient_id, pd.gender, pd.birthyear, pd.birthtime, pd.birthdate_estimated, pd.death_date, pd.deathdate_estimated, pd.cause_of_death, pad.city_village, pad.state_province, pad.county_district, pad.start_date, pad.end_date, pa.* FROM person_details_default pd LEFT JOIN person_attributes pa ON pa.person_id = pd.person_id LEFT JOIN person_address_default pad ON pad.person_id = pd.person_id and pad.preferred = 'true'"
+    },
+    {
+      "name": "bed_management_view",
+      "sourceFilePath": "classpath:viewSql/bedManagementView.sql"
+    },
+    {
+      "name": "bed_management_locations_view",
+      "sourceFilePath": "classpath:viewSql/locationWiseDischarge.sql"
+    },
+    {
+      "name": "patient_bed_view",
+      "sourceFilePath": "classpath:viewSql/patientBedView.sql"
+    },
+    {
+      "name": "patient_operation_theater_view",
+      "sql": "SELECT pd.person_id AS patient_id, pd.gender, pd.birthyear AS birth_year, EXTRACT(YEAR FROM (SELECT age( sb.block_starttime, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')))) AS age_at_surgery, age_group(sb.block_starttime, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')) AS age_group_at_surgery, pd.dead, pa.*, sa.surgical_block_id, sb.primary_provider_name, sb.location_name, sb.creator_name AS block_creator_name, sb.date_created AS block_date_created, sb.date_changed AS block_date_changed, sb.changed_by AS block_changed_by, sb.block_starttime AS block_start_time, sb.block_endtime AS block_end_time, saa.*, sa.sort_weight AS surgery_sort_weight, sa.status AS surgery_status, sa.actual_start_datetime AS surgery_actual_start_time, sa.actual_end_datetime AS surgery_actual_end_time, sa.date_created AS surgery_date_created, sa.date_changed AS surgery_date_changed, sa.creator_name AS surgery_creator_name, sa.changed_by AS surgery_date_changed_by FROM person_details_default pd LEFT JOIN person_attributes pa on pa.person_id = pd.person_id LEFT JOIN surgical_appointment_default sa on sa.patient_id = pd.person_id LEFT JOIN surgical_block_default sb on sb.surgical_block_id = sa.surgical_block_id LEFT JOIN surgical_appointment_attributes saa on saa.surgical_appointment_id = sa.surgical_appointment_id"
+    },
+    {
+      "name": "patient_appointment_view",
+      "sourceFilePath": "classpath:viewSql/patientAppointmentView.sql"
+    },
+    {
+      "name": "patient_program_medication_view",
+      "sql": "SELECT pd.person_id AS patient_id, ppd.program_id, md.patient_program_name AS program_name, ppd.date_enrolled, ppd.date_completed, ppd.program_outcome, pd.gender, pd.birthyear AS birth_year, EXTRACT(YEAR FROM (SELECT age( md.start_date, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')))) AS age_at_medication, age_group(md.start_date, TO_DATE(CONCAT('01-01-', pd.birthyear), 'dd-MM-yyyy')) AS age_group_at_medication, pd.dead, pa.*, md.patient_program_id, md.encounter_id, md.encounter_type_name, md.order_id, md.orderer_name, md.coded_drug_name, md.non_coded_drug_name, md.dose, md.dose_units, md.frequency, md.route, md.start_date AS medication_start_date, md.calculated_end_date  AS medication_calculated_end_date, md.date_stopped AS medication_stopped_date, md.duration, md.duration_units, md.quantity, md.quantity_units, md.dispense AS is_dispensed, md.visit_id, md.visit_type FROM person_details_default pd LEFT JOIN person_attributes pa ON pa.person_id = pd.person_id LEFT JOIN medication_data_default md ON md.patient_id = pd.person_id LEFT OUTER JOIN patient_program_data_default ppd ON ppd.patient_id = md.patient_id and ppd.patient_program_id = md.patient_program_id"
+    },
+    {
+      "name": "patient_diagnosis_condition_view",
+      "sourceFilePath": "classpath:viewSql/patientDiagnosisConditionView.sql"
+    },
+    {
+      "name": "patient_bed_tags_history_view",
+      "sourceFilePath": "classpath:viewSql/patientBedTagView.sql"
+    },
+    {
+      "name": "cohort_view",
+      "sql": "WITH cte_first_consultation AS (SELECT DISTINCT ON (patient_program_id) patient_program_id, location_name, source_of_initial_patient_referral, type_of_injury, admission_status, reason_of_rejection, out_of_criteria, patient_sent_to_another_actor, referral_location FROM first_consultation fc ORDER BY patient_program_id, date_created DESC), cte_initial_medical_assessment AS (SELECT DISTINCT ON (patient_program_id) patient_program_id, type_of_injury, date_of_injury, cause_of_injury, cause_of_burn, location_of_first_treatment, total_tbsa FROM initial_medical_assessment ORDER BY patient_program_id, date_created DESC) SELECT ppdd.patient_id, ppdd.patient_program_id, ppdd.age_during_enrollment, age_group(ppdd.date_enrolled, TO_DATE(CONCAT('01-01-', pdd.birthyear), 'dd-MM-yyyy')) AS age_group_during_enrollment, CASE WHEN pdd.gender = 'M' THEN 'Male' WHEN pdd.gender = 'F' THEN 'Female' ELSE NULL END AS sex, CASE WHEN ppdd.program_id = 1 THEN 'Trauma' WHEN ppdd.program_id = 2 THEN 'Burn' END AS program_name, ppdd.date_enrolled, ppdd.date_completed, ppdd.program_outcome, CASE WHEN ppdd.program_outcome = 'Rejected' THEN 'Rejected' ELSE null END AS rejected, abs(ppdd.date_completed::date - ppdd.date_enrolled::date) AS los_days, cfc.location_name, cfc.source_of_initial_patient_referral, cfc.type_of_injury AS type_of_injury_fc, cfc.admission_status, cfc.reason_of_rejection, cfc.out_of_criteria, cfc.patient_sent_to_another_actor, cfc.referral_location, cima.type_of_injury AS type_of_injury_ima, cima.date_of_injury, abs(ppdd.date_enrolled::date - cima.date_of_injury::date) AS day_diff_injury_admission, cima.cause_of_injury, cima.cause_of_burn, cima.location_of_first_treatment, cima.total_tbsa, CASE WHEN cima.total_tbsa <10 THEN '0.1-9.9%' WHEN cima.total_tbsa >=10 AND cima.total_tbsa <20 THEN '10-19.9%' WHEN cima.total_tbsa >=20 AND cima.total_tbsa <30 THEN '20-29.9%' WHEN cima.total_tbsa >=30 AND cima.total_tbsa <40 THEN '30-39.9%' WHEN cima.total_tbsa >=40 AND cima.total_tbsa <50 THEN '40-49.9%' WHEN cima.total_tbsa >=50 AND cima.total_tbsa <60 THEN '50-59.9%' WHEN cima.total_tbsa >=60 AND cima.total_tbsa <70 THEN '60-69.9%' WHEN cima.total_tbsa >=70 AND cima.total_tbsa <80 THEN '70-79.9%' WHEN cima.total_tbsa >=80 AND cima.total_tbsa <90 THEN '80-89.9%' WHEN cima.total_tbsa >89.9 THEN '>=90%' ELSE NULL END AS tbsa_categories FROM patient_program_data_default ppdd LEFT OUTER JOIN person_details_default pdd ON ppdd.patient_id = pdd.person_id LEFT OUTER JOIN cte_first_consultation cfc ON ppdd.patient_program_id = cfc.patient_program_id LEFT OUTER JOIN cte_initial_medical_assessment cima ON ppdd.patient_program_id = cima.patient_program_id WHERE ppdd.voided = 'false'"
+    },
+    {
+      "name": "first_registration_view",
+      "sql": "SELECT DISTINCT ON (ppdd.patient_id) ppdd.patient_id, ppdd.age_during_enrollment, age_group(ppdd.date_enrolled, TO_DATE(CONCAT('01-01-', pdd.birthyear), 'dd-MM-yyyy')) AS age_group_during_enrollment, CASE WHEN pdd.gender = 'M' THEN 'Male' WHEN pdd.gender = 'F' THEN 'Female' ELSE NULL END AS sex, CASE WHEN ppdd.program_id = 1 THEN 'Trauma' WHEN ppdd.program_id = 2 THEN 'Burn' END AS program_name, ppdd.date_enrolled FROM patient_program_data_default ppdd LEFT OUTER JOIN person_details_default pdd ON ppdd.patient_id = pdd.person_id WHERE ppdd.voided = 'false' ORDER BY patient_id, date_enrolled DESC"
+    },
+    {
+      "name": "median_daydiff_injuryAdmission_burn",
+      "sql": "WITH cte_initial_medical_assessment AS (SELECT DISTINCT ON (patient_program_id) patient_program_id, date_of_injury FROM initial_medical_assessment ORDER BY patient_program_id, date_created DESC), cte_cohort AS (SELECT ppdd.patient_program_id, ppdd.date_enrolled, cima.date_of_injury, abs(ppdd.date_enrolled::date - cima.date_of_injury::date) AS day_diff_injury_admission FROM patient_program_data_default ppdd LEFT OUTER JOIN cte_initial_medical_assessment cima ON ppdd.patient_program_id = cima.patient_program_id WHERE ppdd.voided = 'false' AND ppdd.program_id = 2) SELECT DATE_TRUNC('Month', cc.date_enrolled) AS record_month, percentile_cont(0.5) WITHIN GROUP (ORDER BY cc.day_diff_injury_admission) AS daydiff_injury_admission FROM cte_cohort cc GROUP BY DATE_TRUNC('Month', cc.date_enrolled)"
+    },
+    {
+      "name": "median_daydiff_injuryAdmission_trauma",
+      "sql": "WITH cte_initial_medical_assessment AS (SELECT DISTINCT ON (patient_program_id) patient_program_id, date_of_injury FROM initial_medical_assessment ORDER BY patient_program_id, date_created DESC), cte_cohort AS (SELECT ppdd.patient_program_id, ppdd.date_enrolled, cima.date_of_injury, abs(ppdd.date_enrolled::date - cima.date_of_injury::date) AS day_diff_injury_admission FROM patient_program_data_default ppdd LEFT OUTER JOIN cte_initial_medical_assessment cima ON ppdd.patient_program_id = cima.patient_program_id WHERE ppdd.voided = 'false' AND ppdd.program_id = 1) SELECT DATE_TRUNC('Month', cc.date_enrolled) AS record_month, percentile_cont(0.5) WITHIN GROUP (ORDER BY cc.day_diff_injury_admission) AS daydiff_injury_admission FROM cte_cohort cc GROUP BY DATE_TRUNC('Month', cc.date_enrolled)"
+    },
+    {
+      "name": "median_los_trauma",
+      "sql": "WITH cte_cohort AS (SELECT ppdd.patient_program_id, ppdd.date_enrolled, ppdd.date_completed, abs(ppdd.date_completed::date - ppdd.date_enrolled::date) AS los_days FROM patient_program_data_default ppdd WHERE ppdd.voided = 'false' AND ppdd.program_id = 1 AND ppdd.date_completed IS NOT NULL AND ppdd.program_outcome != 'Rejected') SELECT DATE_TRUNC('Month', cc.date_completed) AS record_month, percentile_cont(0.5) WITHIN GROUP (ORDER BY cc.los_days) AS alos FROM cte_cohort cc GROUP BY DATE_TRUNC('Month', cc.date_completed)"    
+    },
+    {
+      "name": "median_los_burn",
+      "sql": "WITH cte_cohort AS (SELECT ppdd.patient_program_id, ppdd.date_enrolled,	ppdd.date_completed, abs(ppdd.date_completed::date - ppdd.date_enrolled::date) AS los_days FROM patient_program_data_default ppdd WHERE ppdd.voided = 'false' AND ppdd.program_id = 2 AND ppdd.date_completed IS NOT NULL AND ppdd.program_outcome != 'Rejected') SELECT DATE_TRUNC('Month', cc.date_completed) AS record_month, percentile_cont(0.5) WITHIN GROUP (ORDER BY cc.los_days) AS alos FROM cte_cohort cc GROUP BY DATE_TRUNC('Month', cc.date_completed)"    
+    },
+    {
+      "name": "active_patients",
+      "sql": "WITH active_patients AS (SELECT ppdd.date_enrolled::date, CASE WHEN ppdd.date_completed IS NOT NULL THEN ppdd.date_completed::date ELSE CURRENT_DATE END AS date_completed FROM patient_program_data_default ppdd WHERE ppdd.voided = 'false' ORDER BY ppdd.date_enrolled), active_patients_trauma AS (SELECT ppdd.date_enrolled::date, CASE WHEN ppdd.date_completed IS NOT NULL THEN ppdd.date_completed::date ELSE CURRENT_DATE END AS date_completed FROM patient_program_data_default ppdd WHERE ppdd.voided = 'false' AND ppdd.program_id = 1 ORDER BY ppdd.date_enrolled), active_patients_burn AS (SELECT ppdd.date_enrolled::date, CASE WHEN ppdd.date_completed IS NOT NULL THEN ppdd.date_completed::date ELSE CURRENT_DATE END AS date_completed FROM patient_program_data_default ppdd WHERE ppdd.voided = 'false' AND ppdd.program_id = 2 ORDER BY ppdd.date_enrolled), range_values AS (SELECT date_trunc('day',min(ap.date_enrolled)) AS minval, date_trunc('day',max(ap.date_completed)) AS maxval FROM active_patients ap), day_range AS (SELECT generate_series(minval,maxval,'1 day'::interval) as day FROM range_values), daily_enrollments_trauma AS (SELECT date_trunc('day', apt.date_enrolled) AS day, count(*) AS patients FROM active_patients_trauma AS apt GROUP BY 1), daily_enrollments_burn AS (SELECT date_trunc('day', apb.date_enrolled) AS day, count(*) AS patients FROM active_patients_burn AS apb GROUP BY 1), daily_exits_trauma AS (SELECT date_trunc('day', apt.date_completed) AS day, count(*) AS patients FROM active_patients_trauma AS apt GROUP BY 1), daily_exits_burn AS (SELECT date_trunc('day', apb.date_completed) AS day, count(*) AS patients FROM active_patients_burn AS apb GROUP BY 1), daily_active_patients AS (SELECT day_range.day as reporting_day, sum(daily_enrollments_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row) AS cumulative_admissions_trauma, CASE WHEN sum(daily_exits_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row) IS NULL THEN 0 ELSE sum(daily_exits_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row) END AS cumulative_exits_trauma, CASE WHEN sum(daily_exits_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row) IS NULL THEN sum(daily_enrollments_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row) ELSE (sum(daily_enrollments_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row)- sum(daily_exits_trauma.patients) over (order by day_range.day asc rows between unbounded preceding and current row)) END AS active_patients_trauma, sum(daily_enrollments_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row) AS cumulative_admissions_burn, CASE WHEN sum(daily_exits_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row) IS NULL THEN 0 ELSE sum(daily_exits_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row) END AS cumulative_exits_burn, CASE WHEN sum(daily_exits_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row) IS NULL THEN sum(daily_enrollments_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row) ELSE (sum(daily_enrollments_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row)- sum(daily_exits_burn.patients) over (order by day_range.day asc rows between unbounded preceding and current row)) END AS active_patients_burn, CASE WHEN date(day_range.day)::date = (date_trunc('MONTH', day_range.day) + INTERVAL '1 MONTH - 1 day')::date THEN 1 END AS last_day_of_month FROM day_range LEFT OUTER JOIN daily_enrollments_trauma ON day_range.day = daily_enrollments_trauma.day LEFT OUTER JOIN daily_exits_trauma ON day_range.day = daily_exits_trauma.day LEFT OUTER JOIN daily_enrollments_burn ON day_range.day = daily_enrollments_burn.day LEFT OUTER JOIN daily_exits_burn ON day_range.day = daily_exits_burn.day) SELECT dap.reporting_day, dap.active_patients_burn, dap.active_patients_trauma, sum(dap.active_patients_trauma+dap.active_patients_burn) AS active_patients_total FROM daily_active_patients dap WHERE dap.last_day_of_month = 1 and dap.reporting_day > date_trunc('MONTH', CURRENT_DATE) - INTERVAL '1 year' GROUP BY dap.reporting_day, dap.active_patients_trauma, dap.active_patients_burn"
+    }
+  ]
+}
