@@ -181,11 +181,11 @@
         "SC, Treatment phase, other",
         "PTMDT, Abnormal findings, other",
         "PTMDT, Precancerous lesions, other",
-		"HY, Procedure perfomed,other",
-		"VU, Procedure performed, other",
-		"OV, Procedure performed, other",
-		"PTMDT, Other proposed management plan",
-		"POMDT, Other proposed management plan"
+        "HY, Procedure perfomed,other",
+        "VU, Procedure performed, other",
+        "OV, Procedure performed, other",
+        "PTMDT, Other proposed management plan",
+        "POMDT, Other proposed management plan"
       ],
       "columnsToIgnore": [
         "Image"
