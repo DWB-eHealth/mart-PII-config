@@ -200,7 +200,13 @@
         "eventCategory": "Encounter",
         "openmrsTableName": "encounter"
       }
-    }
+    },
+	{
+		"name": "Registration Date",
+		"type": "customSQL",
+		"tableName": "registration_date",
+		"readerSql": "SELECT patient_id, date_created, date_changed FROM patient"
+	}
   ],
   "procedures": [
     {
