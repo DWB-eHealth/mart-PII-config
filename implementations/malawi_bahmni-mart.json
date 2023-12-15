@@ -169,7 +169,6 @@
       "includeFreeTextConceptNames": [
         "PH, NGO's VIA centre name, other",
         "PH, MOH health facility name, Other",
-        "CS, Reason for presentation",
         "IC, Abnormal findings, other",
         "IC, Precancerous lesions, other",
         "IC, Confirmed malignancy diagnosis, other",
@@ -185,7 +184,11 @@
         "VU, Procedure performed, other",
         "OV, Procedure performed, other",
         "PTMDT, Other proposed management plan",
-        "POMDT, Other proposed management plan"
+        "POMDT, Other proposed management plan",
+		"OV, Intraoperative complication,other",
+		"VU, Intraoperative complication,other",
+		"HY, Intraoperative complication, other",
+		"IPDA, Complication (non coded)"
       ],
       "columnsToIgnore": [
         "Image"
@@ -206,6 +209,12 @@
 		"type": "customSQL",
 		"tableName": "registration_date",
 		"readerSql": "SELECT patient_id, date_created, date_changed FROM patient"
+	},
+	{
+		"name": "Document Upload",
+		"type": "customSQL",
+		"tableName": "document_upload",
+		"readerSql": "SELECT o.person_id, o.encounter_id, o.obs_datetime, concat_ws(' ', ifnull(pn.given_name, ''), ifnull(pn.family_name, '')) AS provider_name, CASE WHEN o.concept_id = 144 THEN 'Health passport' WHEN o.concept_id = 145 THEN 'Medical imagining' WHEN o.concept_id = 146 THEN 'External laboratory reports' ELSE NULL END AS document_type FROM obs o INNER JOIN provider p ON p.provider_id = o.creator INNER JOIN person_name pn ON pn.person_id = p.person_id WHERE o.concept_id IN (144, 145, 146) AND o.voided = 0"
 	}
   ],
   "procedures": [
