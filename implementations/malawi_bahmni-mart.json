@@ -185,10 +185,10 @@
         "OV, Procedure performed, other",
         "PTMDT, Other proposed management plan",
         "POMDT, Other proposed management plan",
-		"OV, Intraoperative complication,other",
-		"VU, Intraoperative complication,other",
-		"HY, Intraoperative complication, other",
-		"IPDA, Complication (non coded)"
+        "OV, Intraoperative complication,other",
+        "VU, Intraoperative complication,other",
+        "HY, Intraoperative complication, other",
+        "IPDA, Complication (non coded)"
       ],
       "columnsToIgnore": [
         "Image"
@@ -214,7 +214,7 @@
 		"name": "Document Upload",
 		"type": "customSQL",
 		"tableName": "document_upload",
-		"readerSql": "SELECT o.person_id, o.encounter_id, o.obs_datetime, concat_ws(' ', ifnull(pn.given_name, ''), ifnull(pn.family_name, '')) AS provider_name, CASE WHEN o.concept_id = 144 THEN 'Health passport' WHEN o.concept_id = 145 THEN 'Medical imagining' WHEN o.concept_id = 146 THEN 'External laboratory reports' ELSE NULL END AS document_type FROM obs o INNER JOIN provider p ON p.provider_id = o.creator INNER JOIN person_name pn ON pn.person_id = p.person_id WHERE o.concept_id IN (144, 145, 146) AND o.voided = 0"
+		"readerSql": "SELECT o.person_id, o.encounter_id, o.obs_datetime, concat_ws(' ', ifnull(pn.given_name, ''), ifnull(pn.family_name, '')) AS provider_name, CASE WHEN o.concept_id = 144 THEN 'Health passport' WHEN o.concept_id = 145 THEN 'Medical imagining' WHEN o.concept_id = 146 THEN 'External laboratory reports' WHEN o.concept_id = 2490 THEN 'Histopathology Results' WHEN o.concept_id = 2491 THEN 'Consent form' WHEN o.concept_id = 2492 THEN 'Chemoradiation documents'	ELSE NULL END AS document_type FROM obs o INNER JOIN provider p ON p.provider_id = o.creator INNER JOIN person_name pn ON pn.person_id = p.person_id WHERE o.concept_id IN (144, 145, 146, 2490, 2491, 2492) AND o.voided = 0"
 	}
   ],
   "procedures": [
